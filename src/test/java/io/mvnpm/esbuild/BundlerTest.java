@@ -21,6 +21,11 @@ import io.mvnpm.esbuild.model.BundleType;
 public class BundlerTest {
 
     @Test
+    public void shouldBundleDevUI() throws URISyntaxException, IOException {
+        executeTest("/dev-ui/quarkus-vertx-http-dev-ui-resources-3.5.2.jar", BundleType.MVNPM, "application-dev-ui.js", true);
+    }
+
+    @Test
     public void shouldBundleMvnpm() throws URISyntaxException, IOException {
         executeTest("/mvnpm/stimulus-3.2.1.jar", BundleType.MVNPM, "application-mvnpm.js", true);
     }
